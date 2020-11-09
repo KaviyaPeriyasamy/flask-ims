@@ -1,0 +1,87 @@
+{# parent template #}
+<! DOCTYPE html> 
+<html>
+    <head>
+        {% block head %}
+        <style> 
+            /* Modify the background color */ 
+              
+            .navbar-custom { 
+                background-color:rgb(11, 11, 184); 
+            } .navbar-custom .navbar-brand, .nav.navbar-nav.navbar-right li a, .nav.navbar-nav li a
+            /* Modify brand navbar right text color*/ 
+            .navbar-custom .navbar-brand, .nav.navbar-nav.navbar-right li a, .nav.navbar-nav li a{ 
+                color: rgb(226, 216, 216)
+            } 
+            .nav.navbar-nav.navbar-right li a:hover, .nav.navbar-nav li a:hover 
+            {
+                color: black
+            }
+            .button {
+              background-color: rgb(11, 11, 184);
+              border: none;
+              color: white;
+              padding: 20px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 16px;
+              margin: 4px 2px;
+              cursor: pointer;
+            }
+
+            .button1 {border-radius: 8px;}        
+        </style> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <title>
+            {%block title %}
+            MEIMS
+            {% endblock %}
+        </title>
+        {% endblock %}
+    </head>
+        <body>
+        {% block body %}
+        <nav class="navbar navbar-custom">
+          <div class="container hidden-xs"><div class="row">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="#" data-toggle="collapse" data-target=".navbar-collapse.show">MEIMS</a>
+              </div>
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="/home" data-toggle="collapse" data-target=".navbar-collapse.show">Home</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="/register" data-toggle="collapse" data-target=".navbar-collapse.show"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+                <li><a href="/login" data-toggle="collapse" data-target=".navbar-collapse.show"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+              </ul>
+            </div>
+          </div>
+          </nav>
+          <div class="container">
+            <div class="row">        
+                <div class="col-md-4 col-xs-12">
+                    <img src="{{url_for('static', filename = 'images/home.png')}}"class="img-responsive" style="height:400px; margin-left:-15px; width:850px"/>
+                </div>
+                 <div class="col-md-8 col-xs-12 right-content">  
+                   <h1 style="color: rgb(11, 11, 184);font-size:40px;"><b>Welcome to the Medical Equipment Inventory Management System &#128578;</b></h1>      
+                   <p style="color:rgb(148, 148, 167);font-size:18px;"><em>A web app using Flask to manage inventory of a list of products in respective warehouses.
+                    In this Demo a Medical Equipments wholesaler uses it to keep track of their inventory around various locations in the world.</em></p>
+                   <button class="button button1">Let's Explore</button>
+                  </div>
+           </div>
+        </div> 
+          {% endblock %}
+        </body>
+        {% block tail %}
+        <footer class="container" style="padding-top: 130px;padding-bottom: 0px;">
+          <p>
+            Contributor: Kaviya Periyasamy<br>
+            Source Code: <a tabindex="-1" href="https://github.com/kaviyaperiyasamy">
+              kaviyaperiyasamy/flask-ims</a>.</p>
+        </footer>
+        {% endblock %}
+</html>

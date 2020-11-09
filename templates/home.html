@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block body %}
+        <nav class="navbar navbar-custom">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="#">MEIMS</a>
+              </div>
+              <ul class="nav navbar-nav">
+                <li><a href="/home">Home</a></li>
+                <li class="active"><a href="/product">Product</a></li>
+                <li class="active"><a href="/location">Location</a></li>
+                <li class="active"><a href="/product_movement">Product Movement</a></li>
+                <li class="active"><a href="/report">Report</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="/base"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+              </ul>
+            </div>
+          </nav>
+          <div class="container">
+            <div class="row">        
+                <div class="col-md-4 col-xs-12">
+                    <img src="{{url_for('static', filename = 'images/main.png')}}"class="img-responsive" style="height:400px; margin-left:-15px; width:850px"/>
+                </div>
+                 <div class="col-md-8 col-xs-12 right-content">  
+                   <h1 style="color: rgb(11, 11, 184);font-size:40px;"><b>How it works! &#129300;</b></h1>      
+                   <p style="color:rgb(148, 148, 167);font-size:18px;"><em>Enables you to create, view, edit and delete products, location, and product movement.</em></p>
+                   <p style="color:rgb(148, 148, 167);font-size:18px;"><em>Helps to Keep track all of the product movements.</em></p>
+                   <p style="color:rgb(148, 148, 167);font-size:18px;"><em>Gives you the Instant view of balance quantity.</em></p>
+                  </div>
+           </div>
+        </div> 
+          {% endblock %}
